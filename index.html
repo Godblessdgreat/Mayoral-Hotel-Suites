@@ -91,8 +91,9 @@
     display: inline-block; vertical-align: middle;
   }
 
-  /* Editorial image */
-  .ed-img { transition: transform .7s cubic-bezier(0.23,1,0.32,1); }
+  /* Editorial image: grayscale until hover */
+  .ed-img { filter: grayscale(100%); transition: filter .7s cubic-bezier(0.23,1,0.32,1); }
+  .ed-img:hover { filter: grayscale(0%); }
 
   /* Mask-text wipe link */
   .mask-text {
@@ -119,6 +120,7 @@
   .reveal-bg {
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
+    filter: grayscale(100%);
     opacity: 0; transition: opacity .7s cubic-bezier(0.23,1,0.32,1);
     z-index: 0;
   }
@@ -205,8 +207,7 @@
     <img id="hero-bg" src="assets/images/hero-exterior.jpg"
          alt="Mayoral Hotels &amp; Suites — the hotel exterior in Egbeda, Lagos"
          class="absolute inset-0 w-full h-full object-cover object-top will-change-transform" />
-    <div class="absolute inset-0 bg-gradient-to-b from-mahogany/85 via-mahogany/72 to-mahogany/95 pointer-events-none"></div>
-    <div class="absolute inset-0 bg-ink/25 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
 
     <div id="hero-content" class="absolute inset-0 flex flex-col will-change-[opacity,transform]">
 
@@ -252,9 +253,9 @@
               <div class="font-display font-bold text-eggshell text-[17px] leading-tight">Open 24/7</div>
             </div>
           </div>
-          <a href="book.html" class="bg-terracotta text-eggshell px-5 py-5 flex items-center justify-between gap-3 hover:bg-eggshell hover:text-mahogany transition-colors duration-300 group">
+          <a href="book.html" class="bg-eggshell/15 backdrop-blur-md text-eggshell px-5 py-5 flex items-center justify-between gap-3 hover:bg-eggshell hover:text-mahogany transition-colors duration-300 group">
             <span class="font-mono text-label uppercase">Book a Stay</span>
-            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="font-size:20px;">arrow_forward</span>
+            <span class="material-symbols-outlined text-terracotta group-hover:text-mahogany group-hover:translate-x-1 transition" style="font-size:20px;">arrow_forward</span>
           </a>
         </div>
       </div>
