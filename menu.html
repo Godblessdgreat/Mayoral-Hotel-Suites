@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kitchen Menu — Mayoral Hotels &amp; Suites</title>
+<meta name="description" content="The Mayoral Hotel kitchen — Nigerian classics, continental favourites, and a curated bar list. Breakfast included for hotel guests." />
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Kitchen Menu — Mayoral Hotels & Suites" />
+<meta property="og:description" content="Nigerian classics, continental favourites, and a curated bar list in Egbeda, Lagos." />
+<meta property="og:image" content="assets/images/decor-art.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          terracotta: "#D96C1E",
+          mahogany:   "#4A2C1A",
+          "mahogany-dim": "#5e3b27",
+          eggshell:   "#FEF9F0",
+          marigold:   "#FFB347",
+          ink:        "#1A1A1A",
+          secondary:  "#7b5641",
+          outline:    "#8a7266",
+          "outline-variant": "#ddc1b2",
+          "surface-low": "#f8f3ea",
+        },
+        fontFamily: {
+          display: ["Syne", "sans-serif"],
+          body:    ["Hanken Grotesk", "sans-serif"],
+          mono:    ["JetBrains Mono", "monospace"],
+        },
+        fontSize: {
+          "display-xl": ["120px", { lineHeight: "100px", letterSpacing: "-0.04em", fontWeight: "800" }],
+          "display-mb": ["64px",  { lineHeight: "60px",  letterSpacing: "-0.04em", fontWeight: "800" }],
+          "headline":   ["64px",  { lineHeight: "62px",  letterSpacing: "-0.02em", fontWeight: "700" }],
+          "headline-mb":["38px",  { lineHeight: "40px",  letterSpacing: "-0.02em", fontWeight: "700" }],
+          "headline-md":["32px",  { lineHeight: "38px",  fontWeight: "700" }],
+          "body-lg":    ["20px",  { lineHeight: "32px" }],
+          "body-md":    ["16px",  { lineHeight: "26px" }],
+          "label":      ["12px",  { lineHeight: "16px", letterSpacing: "0.18em", fontWeight: "500" }],
+        },
+        borderRadius: { none: "0", DEFAULT: "0", full: "9999px" },
+        spacing: { gutter: "24px", edge: "5vw", section: "160px", "section-sm": "90px" },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block; vertical-align: middle;
+  }
+  .ed-img { filter: grayscale(100%); transition: filter .7s cubic-bezier(0.23,1,0.32,1); }
+  .group:hover .ed-img, .ed-img:hover { filter: grayscale(0%); }
+  [data-rise] { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1); }
+  [data-rise].is-in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    [data-rise] { opacity: 1 !important; transform: none !important; }
+    .ed-img { filter: grayscale(0%); }
+  }
+</style>
+</head>
+
+<body class="bg-eggshell text-mahogany font-body selection:bg-terracotta selection:text-eggshell overflow-x-hidden">
+
+<!-- ===== Fixed glass nav ===== -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-edge py-5 bg-eggshell/60 backdrop-blur-md border-b border-mahogany/10">
+  <div class="flex items-center gap-4">
+    <button id="menu-open" aria-label="Open menu" class="text-mahogany hover:text-terracotta transition-colors">
+      <span class="material-symbols-outlined" style="font-size:30px;">menu</span>
+    </button>
+    <a href="index.html" class="font-display font-extrabold text-2xl md:text-headline-md text-terracotta tracking-tight leading-none">Mayoral</a>
+  </div>
+  <div class="hidden lg:flex gap-8">
+    <a href="index.html"  class="font-mono text-label uppercase text-mahogany hover:text-terracotta transition-colors">Home</a>
+    <a href="rooms.html"  class="font-mono text-label uppercase text-mahogany hover:text-terracotta transition-colors">Rooms</a>
+    <a href="menu.html"   class="font-mono text-label uppercase text-terracotta font-medium">Dining</a>
+    <a href="gallery.html"class="font-mono text-label uppercase text-mahogany hover:text-terracotta transition-colors">Gallery</a>
+  </div>
+  <a href="book.html" class="bg-mahogany text-eggshell px-4 md:px-6 py-3 font-mono text-label uppercase whitespace-nowrap hover:bg-terracotta transition-colors duration-300 active:scale-95">Book a Stay</a>
+</nav>
+
+<!-- ===== Slide-in side nav ===== -->
+<div id="side-nav" class="fixed inset-0 z-[60] bg-eggshell/95 backdrop-blur-xl translate-x-full transition-transform duration-700" style="transition-timing-function:cubic-bezier(0.85,0,0.15,1);">
+  <div class="flex flex-col justify-center items-start px-edge w-full h-full relative">
+    <button id="menu-close" aria-label="Close menu" class="absolute top-8 right-edge text-mahogany hover:text-terracotta transition-colors">
+      <span class="material-symbols-outlined" style="font-size:34px;">close</span>
+    </button>
+    <div class="mb-10">
+      <h2 class="font-display font-extrabold text-display-mb md:text-display-xl text-terracotta leading-none">Mayoral</h2>
+      <p class="font-mono text-label uppercase text-mahogany/60 mt-3">Restless Elegance in Lagos</p>
+    </div>
+    <ul class="space-y-3 md:space-y-4">
+      <li><a href="index.html"   class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Home</a></li>
+      <li><a href="rooms.html"   class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Rooms</a></li>
+      <li><a href="menu.html"    class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-terracotta block translate-x-3">Dining</a></li>
+      <li><a href="gallery.html" class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Gallery</a></li>
+      <li><a href="about.html"   class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">About</a></li>
+      <li><a href="book.html"    class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Reservations</a></li>
+    </ul>
+    <div class="mt-12 flex flex-wrap gap-8">
+      <a href="contact.html" class="font-mono text-label uppercase flex items-center gap-2 text-mahogany/60 hover:text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">call</span> Contact
+      </a>
+      <a href="tel:+2348064867157" class="font-mono text-label uppercase flex items-center gap-2 text-mahogany/60 hover:text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">north_east</span> +234 806 486 7157
+      </a>
+    </div>
+  </div>
+</div>
+
+<main class="pt-32 md:pt-40">
+
+  <!-- ===== Page hero ===== -->
+  <section class="px-edge mb-12 md:mb-16">
+    <span class="font-mono text-label uppercase text-terracotta block mb-5">— Dining</span>
+    <h1 class="font-display font-extrabold leading-[0.95] text-[clamp(44px,9vw,110px)] mb-8">OUR KITCHEN</h1>
+    <div class="grid grid-cols-12 gap-gutter border-t border-mahogany/15 pt-6">
+      <p class="col-span-12 md:col-span-6 md:col-start-7 font-body text-body-lg text-secondary">
+        Nigerian classics done properly, continental favourites for guests who want something familiar, and a bar list to match. Breakfast is complimentary for every hotel guest.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Feature image ===== -->
+  <section class="px-edge mb-section-sm md:mb-section">
+    <div class="relative overflow-hidden group" data-rise>
+      <img src="assets/images/decor-art.jpg" alt="The Mayoral Hotel restaurant and bar" class="ed-img w-full aspect-[16/10] md:aspect-[16/7] object-cover transition-transform duration-700 group-hover:scale-105" />
+      <div class="absolute left-0 bottom-0 bg-mahogany text-eggshell px-5 py-3 flex items-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:18px;">restaurant</span>
+        <span class="font-mono text-label uppercase">The Restaurant &amp; Bar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Menu categories ===== -->
+  <section class="px-edge space-y-section-sm md:space-y-section">
+
+    <!-- 01 Nigerian Kitchen -->
+    <div data-rise>
+      <div class="border-t border-mahogany/20 pt-8 mb-10">
+        <span class="font-mono text-label uppercase text-terracotta block mb-3">01 — From Lagos</span>
+        <h2 class="font-display font-extrabold text-headline-mb md:text-headline leading-none">Nigerian Kitchen</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-x-gutter">
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Jollof Rice &amp; Grilled Chicken</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦5,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Our signature smoky jollof, served with half a grilled chicken and fried plantain.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Pounded Yam &amp; Egusi Soup</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦6,000</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Hand-pounded yam with rich egusi, assorted meat and stockfish.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Pepper Soup (Catfish)</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦5,000</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Fresh catfish in a fiery, fragrant broth. Served piping hot.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Pepper Soup (Goat)</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦5,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Tender goat meat in a peppery broth with utazi leaves.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Ofada Rice &amp; Ayamase</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦5,800</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Local rice with our green pepper stew, assorted meat and boiled egg.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Suya Platter for Two</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦8,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Grilled beef and chicken suya with onions, tomato, and yaji.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Asun</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦7,000</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Spicy roasted goat meat, generously seasoned. Best with a cold drink.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Nkwobi</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦6,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Cow foot in a rich palm-oil sauce with utazi — a Mayoral favourite.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Continental -->
+    <div data-rise>
+      <div class="border-t border-mahogany/20 pt-8 mb-10">
+        <span class="font-mono text-label uppercase text-terracotta block mb-3">02 — Familiar plates</span>
+        <h2 class="font-display font-extrabold text-headline-mb md:text-headline leading-none">Continental</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-x-gutter">
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">English Breakfast</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦4,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Eggs, sausage, baked beans, grilled tomato, toast, and tea or coffee.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Grilled Chicken Caesar</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦5,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Crisp romaine, parmesan, croutons, classic dressing, grilled chicken.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Beef Stroganoff</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦7,000</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Tender beef strips in a creamy mushroom sauce over white rice.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Spaghetti Bolognese</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦4,800</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Slow-cooked beef ragù over spaghetti, finished with parmesan.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Club Sandwich &amp; Fries</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦4,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Triple-decker with grilled chicken, bacon, egg, lettuce and tomato.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Grilled Tilapia</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦7,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Whole tilapia, seasoned and grilled, with chips and side salad.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Drinks & Bar -->
+    <div data-rise>
+      <div class="border-t border-mahogany/20 pt-8 mb-10">
+        <span class="font-mono text-label uppercase text-terracotta block mb-3">03 — From the bar</span>
+        <h2 class="font-display font-extrabold text-headline-mb md:text-headline leading-none">Drinks &amp; Bar</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-x-gutter">
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Mayoral Sunset</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦3,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Our house cocktail — vodka, passionfruit, lime, finished with a flame.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Chapman</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦2,500</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">The classic Nigerian cooler — Fanta, Sprite, Angostura, lime and cucumber.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Classic Mojito</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦3,000</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">White rum, fresh mint, lime, sugar and soda.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">House Red / White Wine</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦4,000</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">By the glass — ask the bar for tonight's pour.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Fresh Juice</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">₦1,800</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Pineapple or orange, pressed fresh in our kitchen — no concentrate.</p>
+        </div>
+        <div class="border-t border-mahogany/12 py-5">
+          <div class="flex justify-between items-baseline gap-4">
+            <h3 class="font-display font-bold text-[22px] md:text-[24px] leading-tight">Soft Drinks &amp; Water</h3>
+            <span class="font-mono text-label uppercase text-terracotta whitespace-nowrap">from ₦700</span>
+          </div>
+          <p class="font-body text-body-md text-mahogany/65 mt-2">Coke, Fanta, Sprite, Schweppes, sparkling and still water.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== Note ===== -->
+  <section class="px-edge mt-16 md:mt-24">
+    <p class="font-mono text-label uppercase text-mahogany/45 border-t border-mahogany/15 pt-6 max-w-2xl leading-relaxed">
+      Menu items and prices shown are illustrative — the kitchen rotates dishes seasonally, and current pricing may vary. Please confirm at the restaurant or with reception.
+    </p>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="px-edge py-section-sm md:py-section">
+    <div class="bg-mahogany text-eggshell p-10 md:p-16 grid grid-cols-12 gap-gutter items-center" data-rise>
+      <div class="col-span-12 md:col-span-8">
+        <span class="font-mono text-label uppercase text-marigold block mb-4">Stay &amp; dine</span>
+        <h2 class="font-display font-extrabold text-headline-mb md:text-headline leading-none">BREAKFAST<br/>IS ON US.</h2>
+      </div>
+      <div class="col-span-12 md:col-span-4 flex flex-col gap-4">
+        <a href="book.html" class="bg-terracotta text-eggshell px-7 py-4 font-mono text-label uppercase text-center hover:bg-eggshell hover:text-mahogany transition-colors duration-300">Book a room</a>
+        <a href="rooms.html" class="border border-eggshell/30 px-7 py-4 font-mono text-label uppercase text-center hover:border-marigold hover:text-marigold transition-colors">View rooms</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-mahogany text-eggshell grid grid-cols-1 md:grid-cols-12 gap-gutter px-edge py-section-sm md:py-section w-full">
+  <div class="col-span-12 md:col-span-4">
+    <h2 class="font-display font-bold text-headline-md md:text-headline text-terracotta mb-6">Mayoral</h2>
+    <p class="font-body text-body-md text-eggshell/70 max-w-xs mb-8">
+      A boutique hotel in Egbeda, Lagos, dedicated to the restless pursuit of elegance, comfort, and a kitchen worth staying in for.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://facebook.com/mayoralhotel" target="_blank" rel="noopener" aria-label="Facebook" class="w-11 h-11 border border-eggshell/20 rounded-full flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">share</span>
+      </a>
+      <a href="https://instagram.com/mayoralhotel" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 border border-eggshell/20 rounded-full flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">photo_camera</span>
+      </a>
+    </div>
+  </div>
+  <div class="col-span-12 md:col-span-2 md:col-start-6">
+    <h5 class="font-mono text-label uppercase mb-6 text-terracotta">Explore</h5>
+    <ul class="space-y-4">
+      <li><a href="rooms.html"   class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Rooms</a></li>
+      <li><a href="menu.html"    class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Dining</a></li>
+      <li><a href="gallery.html" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Gallery</a></li>
+      <li><a href="about.html"   class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">About</a></li>
+      <li><a href="contact.html" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Contact</a></li>
+    </ul>
+  </div>
+  <div class="col-span-12 md:col-span-4 md:col-start-9">
+    <h5 class="font-mono text-label uppercase mb-6 text-terracotta">Visit</h5>
+    <p class="font-body text-body-md text-eggshell/70 mb-3">14 Aminu Ajibode Avenue, Unity Estate, Abule-Odu B/Stop, Egbeda, Lagos.</p>
+    <a href="tel:+2348064867157" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors block">+234 806 486 7157</a>
+    <a href="mailto:mayoralhotel@yahoo.com" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors block">mayoralhotel@yahoo.com</a>
+  </div>
+  <div class="col-span-12 mt-20 pt-8 border-t border-eggshell/10 flex flex-col md:flex-row justify-between items-center gap-5">
+    <span class="font-mono text-label uppercase text-eggshell/40">© <span data-year>2026</span> Mayoral Hotels &amp; Suites</span>
+    <div class="flex flex-wrap gap-6 md:gap-8 justify-center">
+      <span class="font-mono text-label uppercase text-eggshell/40">14 Aminu Ajibode Ave, Egbeda</span>
+      <span class="font-mono text-label uppercase text-eggshell/40">6.59° N, 3.28° E</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating ritual book trigger -->
+<a href="book.html" aria-label="Book a stay"
+   class="fixed bottom-7 right-7 z-50 w-20 h-20 rounded-full bg-terracotta text-eggshell flex flex-col items-center justify-center hover:bg-mahogany transition-colors duration-300">
+  <span class="material-symbols-outlined" style="font-size:22px;">key</span>
+  <span class="font-mono uppercase mt-0.5" style="font-size:9px; letter-spacing:0.14em;">Book</span>
+</a>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Side nav ----
+  var sideNav = document.getElementById('side-nav');
+  var openBtn = document.getElementById('menu-open');
+  var closeBtn = document.getElementById('menu-close');
+  function setNav(open) {
+    sideNav.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  if (openBtn) openBtn.addEventListener('click', function () { setNav(true); });
+  if (closeBtn) closeBtn.addEventListener('click', function () { setNav(false); });
+  sideNav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setNav(false); });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+
+  // ---- Reveal-on-scroll ----
+  if ('IntersectionObserver' in window && !reduce) {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-in'); rio.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-rise]').forEach(function (el) { rio.observe(el); });
+  } else {
+    document.querySelectorAll('[data-rise]').forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  // ---- Footer year ----
+  document.querySelectorAll('[data-year]').forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+})();
+</script>
+</body>
+</html>

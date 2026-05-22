@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Mayoral Hotels &amp; Suites</title>
+<meta name="description" content="Get in touch with Mayoral Hotels & Suites, Egbeda, Lagos — phone, WhatsApp, email, address, and a quick message form." />
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Contact — Mayoral Hotels & Suites" />
+<meta property="og:description" content="Reach Mayoral Hotels & Suites, Egbeda, Lagos — phone, WhatsApp, email, and a quick message form." />
+<meta property="og:image" content="assets/images/exterior-day.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          terracotta: "#D96C1E",
+          mahogany:   "#4A2C1A",
+          "mahogany-dim": "#5e3b27",
+          eggshell:   "#FEF9F0",
+          marigold:   "#FFB347",
+          ink:        "#1A1A1A",
+          secondary:  "#7b5641",
+          outline:    "#8a7266",
+          "outline-variant": "#ddc1b2",
+          "surface-low": "#f8f3ea",
+          error:      "#ba1a1a",
+        },
+        fontFamily: {
+          display: ["Syne", "sans-serif"],
+          body:    ["Hanken Grotesk", "sans-serif"],
+          mono:    ["JetBrains Mono", "monospace"],
+        },
+        fontSize: {
+          "display-xl": ["120px", { lineHeight: "100px", letterSpacing: "-0.04em", fontWeight: "800" }],
+          "display-mb": ["64px",  { lineHeight: "60px",  letterSpacing: "-0.04em", fontWeight: "800" }],
+          "headline":   ["64px",  { lineHeight: "62px",  letterSpacing: "-0.02em", fontWeight: "700" }],
+          "headline-mb":["38px",  { lineHeight: "40px",  letterSpacing: "-0.02em", fontWeight: "700" }],
+          "headline-md":["32px",  { lineHeight: "38px",  fontWeight: "700" }],
+          "body-lg":    ["20px",  { lineHeight: "32px" }],
+          "body-md":    ["16px",  { lineHeight: "26px" }],
+          "label":      ["12px",  { lineHeight: "16px", letterSpacing: "0.18em", fontWeight: "500" }],
+        },
+        borderRadius: { none: "0", DEFAULT: "0", full: "9999px" },
+        spacing: { gutter: "24px", edge: "5vw", section: "160px", "section-sm": "90px" },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block; vertical-align: middle;
+  }
+  [data-rise] { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1); }
+  [data-rise].is-in { opacity: 1; transform: none; }
+  .f-input {
+    width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(74,44,26,.3);
+    padding: 12px 0; font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; color: #4A2C1A;
+  }
+  .f-input:focus { outline: none; border-bottom-color: #D96C1E; }
+  .field__error { display: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #ba1a1a; margin-top: 6px; }
+  .field.has-error .f-input { border-bottom-color: #ba1a1a; }
+  .field.has-error .field__error { display: block; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    [data-rise] { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+
+<body class="bg-eggshell text-mahogany font-body selection:bg-terracotta selection:text-eggshell overflow-x-hidden">
+
+<!-- ===== Fixed glass nav ===== -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-edge py-5 bg-eggshell/60 backdrop-blur-md border-b border-mahogany/10">
+  <div class="flex items-center gap-4">
+    <button id="menu-open" aria-label="Open menu" class="text-mahogany hover:text-terracotta transition-colors">
+      <span class="material-symbols-outlined" style="font-size:30px;">menu</span>
+    </button>
+    <a href="index.html" class="font-display font-extrabold text-2xl md:text-headline-md text-terracotta tracking-tight leading-none">Mayoral</a>
+  </div>
+  <div class="hidden lg:flex gap-8">
+    <a href="index.html"  class="font-mono text-label uppercase text-mahogany hover:text-terracotta transition-colors">Home</a>
+    <a href="rooms.html"  class="font-mono text-label uppercase text-mahogany hover:text-terracotta transition-colors">Rooms</a>
+    <a href="menu.html"   class="font-mono text-label uppercase text-mahogany hover:text-terracotta transition-colors">Dining</a>
+    <a href="gallery.html"class="font-mono text-label uppercase text-mahogany hover:text-terracotta transition-colors">Gallery</a>
+  </div>
+  <a href="book.html" class="bg-mahogany text-eggshell px-4 md:px-6 py-3 font-mono text-label uppercase whitespace-nowrap hover:bg-terracotta transition-colors duration-300 active:scale-95">Book a Stay</a>
+</nav>
+
+<!-- ===== Slide-in side nav ===== -->
+<div id="side-nav" class="fixed inset-0 z-[60] bg-eggshell/95 backdrop-blur-xl translate-x-full transition-transform duration-700" style="transition-timing-function:cubic-bezier(0.85,0,0.15,1);">
+  <div class="flex flex-col justify-center items-start px-edge w-full h-full relative">
+    <button id="menu-close" aria-label="Close menu" class="absolute top-8 right-edge text-mahogany hover:text-terracotta transition-colors">
+      <span class="material-symbols-outlined" style="font-size:34px;">close</span>
+    </button>
+    <div class="mb-10">
+      <h2 class="font-display font-extrabold text-display-mb md:text-display-xl text-terracotta leading-none">Mayoral</h2>
+      <p class="font-mono text-label uppercase text-mahogany/60 mt-3">Restless Elegance in Lagos</p>
+    </div>
+    <ul class="space-y-3 md:space-y-4">
+      <li><a href="index.html"   class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Home</a></li>
+      <li><a href="rooms.html"   class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Rooms</a></li>
+      <li><a href="menu.html"    class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Dining</a></li>
+      <li><a href="gallery.html" class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Gallery</a></li>
+      <li><a href="about.html"   class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">About</a></li>
+      <li><a href="book.html"    class="font-display font-extrabold text-[44px] md:text-[64px] leading-none text-mahogany/55 hover:text-terracotta hover:translate-x-3 transition-all duration-300 block">Reservations</a></li>
+    </ul>
+    <div class="mt-12 flex flex-wrap gap-8">
+      <a href="contact.html" class="font-mono text-label uppercase flex items-center gap-2 text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">call</span> Contact
+      </a>
+      <a href="tel:+2348064867157" class="font-mono text-label uppercase flex items-center gap-2 text-mahogany/60 hover:text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">north_east</span> +234 806 486 7157
+      </a>
+    </div>
+  </div>
+</div>
+
+<main class="pt-32 md:pt-40">
+
+  <!-- ===== Page hero ===== -->
+  <section class="px-edge mb-12 md:mb-16">
+    <span class="font-mono text-label uppercase text-terracotta block mb-5">— Contact</span>
+    <h1 class="font-display font-extrabold leading-[0.95] text-[clamp(44px,9vw,110px)] mb-8">GET IN TOUCH</h1>
+    <div class="grid grid-cols-12 gap-gutter border-t border-mahogany/15 pt-6">
+      <p class="col-span-12 md:col-span-6 md:col-start-7 font-body text-body-lg text-secondary">
+        Have a question that isn't quite a booking? Send a message and we'll get back to you the same day — or reach us directly by phone or WhatsApp.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Contact + form ===== -->
+  <section class="px-edge pb-section-sm md:pb-section">
+    <div class="grid grid-cols-12 gap-gutter">
+
+      <!-- Contact info -->
+      <div class="col-span-12 lg:col-span-4" data-rise>
+        <div class="bg-mahogany text-eggshell p-8 md:p-10 h-full flex flex-col">
+          <span class="font-mono text-label uppercase text-marigold block mb-6">We're here to help</span>
+          <div class="space-y-6 mb-8">
+            <div>
+              <span class="font-mono text-label uppercase text-eggshell/45 block mb-1">Address</span>
+              <p class="font-body text-body-md text-eggshell/85">14 Aminu Ajibode Avenue, Unity Estate, Abule-Odu B/Stop, Egbeda, Lagos.</p>
+            </div>
+            <div>
+              <span class="font-mono text-label uppercase text-eggshell/45 block mb-1">Phone</span>
+              <a href="tel:+2348064867157" class="font-body text-body-md text-eggshell/85 hover:text-marigold transition-colors block">+234 806 486 7157</a>
+              <a href="tel:+2347086849002" class="font-body text-body-md text-eggshell/85 hover:text-marigold transition-colors block">+234 708 684 9002</a>
+            </div>
+            <div>
+              <span class="font-mono text-label uppercase text-eggshell/45 block mb-1">Email</span>
+              <a href="mailto:mayoralhotel@yahoo.com" class="font-body text-body-md text-eggshell/85 hover:text-marigold transition-colors">mayoralhotel@yahoo.com</a>
+            </div>
+            <div>
+              <span class="font-mono text-label uppercase text-eggshell/45 block mb-1">Front desk</span>
+              <p class="font-body text-body-md text-eggshell/85">Open 24 hours, 7 days a week.</p>
+            </div>
+          </div>
+          <div class="mt-auto border-t border-eggshell/15 pt-6 flex flex-wrap gap-5">
+            <a href="https://wa.me/2348064867157" target="_blank" rel="noopener" class="font-mono text-label uppercase flex items-center gap-2 text-eggshell hover:text-marigold transition-colors">
+              <span class="material-symbols-outlined" style="font-size:18px;">chat</span> WhatsApp
+            </a>
+            <a href="https://facebook.com/mayoralhotel" target="_blank" rel="noopener" class="font-mono text-label uppercase flex items-center gap-2 text-eggshell/80 hover:text-marigold transition-colors">
+              <span class="material-symbols-outlined" style="font-size:18px;">share</span> Facebook
+            </a>
+            <a href="https://instagram.com/mayoralhotel" target="_blank" rel="noopener" class="font-mono text-label uppercase flex items-center gap-2 text-eggshell/80 hover:text-marigold transition-colors">
+              <span class="material-symbols-outlined" style="font-size:18px;">photo_camera</span> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6" data-rise>
+        <form id="contact-form" novalidate>
+          <div class="grid md:grid-cols-2 gap-x-gutter gap-y-8">
+            <div class="field">
+              <label for="name" class="font-mono text-label uppercase text-mahogany/55 block mb-1">Your name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" class="f-input" />
+              <span class="field__error">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="email" class="font-mono text-label uppercase text-mahogany/55 block mb-1">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" class="f-input" />
+              <span class="field__error">Please enter a valid email.</span>
+            </div>
+            <div class="field md:col-span-2">
+              <label for="subject" class="font-mono text-label uppercase text-mahogany/55 block mb-1">Subject</label>
+              <input type="text" id="subject" name="subject" required class="f-input" />
+              <span class="field__error">Please add a subject.</span>
+            </div>
+            <div class="field md:col-span-2">
+              <label for="message" class="font-mono text-label uppercase text-mahogany/55 block mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="How can we help?" class="f-input placeholder:text-mahogany/30 resize-y"></textarea>
+              <span class="field__error">Please add a message.</span>
+            </div>
+          </div>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <button type="submit" class="inline-flex items-center gap-3 bg-mahogany text-eggshell px-8 py-4 font-mono text-label uppercase hover:bg-terracotta transition-colors duration-300 active:scale-95">
+              <span class="material-symbols-outlined" style="font-size:18px;">chat</span>
+              Send message on WhatsApp
+            </button>
+            <a href="tel:+2348064867157" class="inline-flex items-center gap-2 border border-mahogany/30 px-8 py-4 font-mono text-label uppercase hover:border-terracotta hover:text-terracotta transition-colors">
+              Or call us
+            </a>
+          </div>
+          <p class="font-mono text-[11px] uppercase tracking-wider text-mahogany/45 mt-6">
+            Submitting opens WhatsApp with your message ready to send.
+          </p>
+        </form>
+
+        <!-- Success -->
+        <div id="form-success" class="hidden border border-outline-variant bg-surface-low p-10">
+          <span class="material-symbols-outlined text-terracotta" style="font-size:44px;">check_circle</span>
+          <h3 class="font-display font-extrabold text-headline-mb mt-4 mb-3">Message ready to send.</h3>
+          <p class="font-body text-body-md text-mahogany/80">WhatsApp should now be open with your message. Tap send and we'll reply the same day. If it did not open, call <a href="tel:+2348064867157" class="text-terracotta hover:underline">+234 806 486 7157</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Map ===== -->
+  <section class="px-edge pb-section-sm md:pb-section">
+    <div class="border-t border-mahogany/20 pt-8 mb-8" data-rise>
+      <span class="font-mono text-label uppercase text-terracotta block mb-3">How to find us</span>
+      <h2 class="font-display font-extrabold text-headline-mb md:text-headline leading-none">ON THE MAP</h2>
+    </div>
+    <div class="border border-outline-variant" data-rise>
+      <iframe src="https://www.google.com/maps?q=Aminu+Ajibode+Avenue+Unity+Estate+Egbeda+Lagos&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Map of Mayoral Hotels & Suites" class="w-full h-[420px]"></iframe>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-mahogany text-eggshell grid grid-cols-1 md:grid-cols-12 gap-gutter px-edge py-section-sm md:py-section w-full">
+  <div class="col-span-12 md:col-span-4">
+    <h2 class="font-display font-bold text-headline-md md:text-headline text-terracotta mb-6">Mayoral</h2>
+    <p class="font-body text-body-md text-eggshell/70 max-w-xs mb-8">
+      A boutique hotel in Egbeda, Lagos, dedicated to the restless pursuit of elegance, comfort, and a kitchen worth staying in for.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://facebook.com/mayoralhotel" target="_blank" rel="noopener" aria-label="Facebook" class="w-11 h-11 border border-eggshell/20 rounded-full flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">share</span>
+      </a>
+      <a href="https://instagram.com/mayoralhotel" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 border border-eggshell/20 rounded-full flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px;">photo_camera</span>
+      </a>
+    </div>
+  </div>
+  <div class="col-span-12 md:col-span-2 md:col-start-6">
+    <h5 class="font-mono text-label uppercase mb-6 text-terracotta">Explore</h5>
+    <ul class="space-y-4">
+      <li><a href="rooms.html"   class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Rooms</a></li>
+      <li><a href="menu.html"    class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Dining</a></li>
+      <li><a href="gallery.html" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Gallery</a></li>
+      <li><a href="about.html"   class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">About</a></li>
+      <li><a href="contact.html" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors">Contact</a></li>
+    </ul>
+  </div>
+  <div class="col-span-12 md:col-span-4 md:col-start-9">
+    <h5 class="font-mono text-label uppercase mb-6 text-terracotta">Visit</h5>
+    <p class="font-body text-body-md text-eggshell/70 mb-3">14 Aminu Ajibode Avenue, Unity Estate, Abule-Odu B/Stop, Egbeda, Lagos.</p>
+    <a href="tel:+2348064867157" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors block">+234 806 486 7157</a>
+    <a href="mailto:mayoralhotel@yahoo.com" class="font-body text-body-md text-eggshell/70 hover:text-marigold transition-colors block">mayoralhotel@yahoo.com</a>
+  </div>
+  <div class="col-span-12 mt-20 pt-8 border-t border-eggshell/10 flex flex-col md:flex-row justify-between items-center gap-5">
+    <span class="font-mono text-label uppercase text-eggshell/40">© <span data-year>2026</span> Mayoral Hotels &amp; Suites</span>
+    <div class="flex flex-wrap gap-6 md:gap-8 justify-center">
+      <span class="font-mono text-label uppercase text-eggshell/40">14 Aminu Ajibode Ave, Egbeda</span>
+      <span class="font-mono text-label uppercase text-eggshell/40">6.59° N, 3.28° E</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating ritual book trigger -->
+<a href="book.html" aria-label="Book a stay"
+   class="fixed bottom-7 right-7 z-50 w-20 h-20 rounded-full bg-terracotta text-eggshell flex flex-col items-center justify-center hover:bg-mahogany transition-colors duration-300">
+  <span class="material-symbols-outlined" style="font-size:22px;">key</span>
+  <span class="font-mono uppercase mt-0.5" style="font-size:9px; letter-spacing:0.14em;">Book</span>
+</a>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WA = '2348064867157';
+
+  // ---- Side nav ----
+  var sideNav = document.getElementById('side-nav');
+  var openBtn = document.getElementById('menu-open');
+  var closeBtn = document.getElementById('menu-close');
+  function setNav(open) {
+    sideNav.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  if (openBtn) openBtn.addEventListener('click', function () { setNav(true); });
+  if (closeBtn) closeBtn.addEventListener('click', function () { setNav(false); });
+  sideNav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setNav(false); });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+
+  // ---- Contact form -> WhatsApp ----
+  var form = document.getElementById('contact-form');
+  var success = document.getElementById('form-success');
+  var el = function (n) { return form.elements[n]; };
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    form.querySelectorAll('.field').forEach(function (f) { f.classList.remove('has-error'); });
+    var valid = true;
+
+    form.querySelectorAll('[required]').forEach(function (input) {
+      var bad = !input.value.trim();
+      if (input.type === 'email' && input.value.trim() &&
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) bad = true;
+      if (bad) { input.closest('.field').classList.add('has-error'); valid = false; }
+    });
+
+    if (!valid) {
+      var firstError = form.querySelector('.field.has-error');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    var lines = [
+      'Hello Mayoral,', '',
+      'Name: ' + el('name').value.trim(),
+      'Email: ' + el('email').value.trim(),
+      'Subject: ' + el('subject').value.trim(),
+      'Message: ' + el('message').value.trim()
+    ];
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+
+    form.style.display = 'none';
+    success.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  form.querySelectorAll('input, textarea').forEach(function (input) {
+    input.addEventListener('input', function () {
+      var field = input.closest('.field');
+      if (field) field.classList.remove('has-error');
+    });
+  });
+
+  // ---- Reveal-on-scroll ----
+  if ('IntersectionObserver' in window && !reduce) {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-in'); rio.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('[data-rise]').forEach(function (el) { rio.observe(el); });
+  } else {
+    document.querySelectorAll('[data-rise]').forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  // ---- Footer year ----
+  document.querySelectorAll('[data-year]').forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "mayoral-hotels-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mayoral Hotels & Suites — static website for a boutique hotel in Egbeda, Lagos.",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "start": "node serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
