@@ -91,9 +91,8 @@
     display: inline-block; vertical-align: middle;
   }
 
-  /* Editorial image: grayscale until hover */
-  .ed-img { filter: grayscale(100%); transition: filter .7s cubic-bezier(0.23,1,0.32,1); }
-  .ed-img:hover { filter: grayscale(0%); }
+  /* Editorial image */
+  .ed-img { transition: transform .7s cubic-bezier(0.23,1,0.32,1); }
 
   /* Mask-text wipe link */
   .mask-text {
@@ -120,7 +119,6 @@
   .reveal-bg {
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
-    filter: grayscale(100%);
     opacity: 0; transition: opacity .7s cubic-bezier(0.23,1,0.32,1);
     z-index: 0;
   }
