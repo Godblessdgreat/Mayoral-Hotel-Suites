@@ -91,9 +91,8 @@
     display: inline-block; vertical-align: middle;
   }
 
-  /* Editorial image: grayscale until hover */
-  .ed-img { filter: grayscale(100%); transition: filter .7s cubic-bezier(0.23,1,0.32,1); }
-  .ed-img:hover { filter: grayscale(0%); }
+  /* Editorial image */
+  .ed-img { transition: transform .7s cubic-bezier(0.23,1,0.32,1); }
 
   /* Mask-text wipe link */
   .mask-text {
@@ -120,7 +119,6 @@
   .reveal-bg {
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
-    filter: grayscale(100%);
     opacity: 0; transition: opacity .7s cubic-bezier(0.23,1,0.32,1);
     z-index: 0;
   }
@@ -392,6 +390,46 @@
           <h3 class="reveal-name font-display font-extrabold text-[36px] md:text-[68px] leading-none text-mahogany">Luxury Single</h3>
         </div>
         <span class="reveal-price material-symbols-outlined text-mahogany/30 group-hover:text-terracotta transition-colors" style="font-size:32px;">north_east</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Section 04 — A Glimpse Inside ===== -->
+  <section class="bg-terracotta text-eggshell px-edge py-section-sm md:py-section">
+    <div class="flex flex-wrap items-end justify-between gap-6 border-t border-eggshell/25 pt-8 mb-10 md:mb-14" data-rise>
+      <div>
+        <span class="font-mono text-label uppercase text-eggshell/70 block mb-3">— 04 A Glimpse Inside</span>
+        <h2 class="font-display font-extrabold text-headline-mb md:text-headline leading-none">MOMENTS AT<br/>MAYORAL</h2>
+      </div>
+      <a href="gallery.html" class="font-mono text-label uppercase flex items-center gap-2 border-b border-eggshell/40 pb-1 hover:text-mahogany hover:border-mahogany transition-colors">
+        View the full gallery
+        <span class="material-symbols-outlined" style="font-size:18px;">north_east</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4" data-rise>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/room-luxury-suite.jpg" alt="Luxury Suite at Mayoral" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
+      </a>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/exterior-night.jpg" alt="Mayoral Hotels &amp; Suites at night" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
+      </a>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/room-executive.jpg" alt="Executive Room" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
+      </a>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/decor-art.jpg" alt="Decor and art at Mayoral" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
+      </a>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/lobby-stairwell.jpg" alt="Lobby and stairwell" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
+      </a>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/room-deluxe.jpg" alt="Deluxe Room" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
+      </a>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/room-detail.jpg" alt="Room detail at Mayoral" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
+      </a>
+      <a href="gallery.html" class="group relative overflow-hidden">
+        <img src="assets/images/room-executive-balcony.jpg" alt="Executive Room with balcony" class="ed-img w-full aspect-[4/3] object-cover group-hover:scale-105" />
       </a>
     </div>
   </section>
